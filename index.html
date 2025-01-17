@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alias Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Экран настроек игры -->
+    <div id="setup-screen">
+        <h1>🎲 Настройки Alias</h1>
+        <label>Количество команд:</label>
+        <select id="team-count" onchange="generateTeamInputs()">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <div id="team-names"></div>
+        <label>До скольки очков играем:</label>
+        <input type="number" id="score-limit" value="10" min="5" max="50">
+        <button class="start-btn" onclick="startGame()">🚀 Начать игру</button>
+    </div>
+
+    <!-- Экран игры -->
+    <div id="game-screen" style="display: none;">
+        <h1 id="team-name">Команда X</h1>
+        <p id="word">🔹 Загружаем слово...</p>
+        <p id="timer">⏳ 60</p>
+        <button id="correct" class="game-btn green">✅ Угадано</button>
+        <button id="skip" class="game-btn red">⏭ Пропустить</button>
+        <div class="word-list">
+            <h3>✅ Угаданные слова:</h3>
+            <ul id="guessed-list"></ul>
+            <h3>⏭ Пропущенные слова:</h3>
+            <ul id="skipped-list"></ul>
+        </div>
+    </div>
+
+    <!-- Экран результатов раунда -->
+    <div id="score-screen" style="display: none;">
+        <h1>🏆 Промежуточные результаты</h1>
+        <ul id="team-scores"></ul>
+        <button class="start-btn" onclick="nextRound()">🔄 Следующий раунд</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
