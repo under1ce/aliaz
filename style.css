@@ -1,46 +1,62 @@
+/* Основные стили */
 body {
     font-family: 'Arial', sans-serif;
     text-align: center;
-    background: #e61b1a;
+    background: linear-gradient(135deg, #e61b1a, #ff4136);
+    color: white;
+    margin: 0;
+    padding: 0;
 }
 
+/* Заголовок */
 h1 {
-    color: #333;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 20px 0;
 }
 
+/* Контейнер игры */
 .game-container {
     max-width: 400px;
     margin: 50px auto;
-    background: red;
+    background: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
+/* Кнопки */
 button {
     display: block;
     width: 100%;
     margin: 10px 0;
-    padding: 12px;
-    font-size: 18px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
     cursor: pointer;
     border: none;
-    border-radius: 5px;
-    transition: transform 0.1s ease, box-shadow 0.2s;
+    border-radius: 8px;
+    transition: transform 0.1s ease, box-shadow 0.2s, background 0.3s;
 }
 
+/* Кнопка старта */
 .start-btn {
-    background: white;
-    color: black;
-    font-size: 20px;
+    background: #e61b1a;
+    color: white;
+    border: 2px solid white;
 }
 
 .start-btn:hover {
-    background: white;
+    background: #ff4136;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
+/* Кнопки игры */
 .game-btn {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -51,6 +67,7 @@ button {
 
 .green:hover {
     background: #45a049;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.8);
 }
 
 .red {
@@ -60,17 +77,23 @@ button {
 
 .red:hover {
     background: #d32f2f;
+    box-shadow: 0 0 10px rgba(244, 67, 54, 0.8);
 }
 
 button:active {
     transform: scale(0.95);
 }
 
+/* Список угаданных и пропущенных слов */
 .word-list {
     text-align: left;
-    font-size: 16px;
-    color: black;
+    font-size: 18px;
     margin-top: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    color: black;
 }
 
 .word-list ul {
@@ -79,15 +102,33 @@ button:active {
 }
 
 .word-list li {
-    margin: 5px 0;
-    padding: 5px;
+    margin: 8px 0;
+    padding: 10px;
     border-radius: 5px;
+    font-weight: bold;
 }
 
+/* Цвета угаданных и пропущенных слов */
 .word-list .correct {
-    background: lightgreen;
+    background: #4caf50;
+    color: white;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .word-list .skipped {
-    background: lightcoral;
+    background: #f44336;
+    color: white;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
