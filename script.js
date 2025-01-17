@@ -70,11 +70,14 @@ function startRound() {
 // Обновление текущего слова
 function updateWord() {
     if (index < words.length) {
-        document.getElementById("word").innerText = "🔹 " + words[index];
+        let wordElement = document.getElementById("word");
+        wordElement.innerText = " 🗣️ " + words[index]; // Показываем новое слово
+        wordElement.classList.add("current-word"); // Добавляем стиль
     } else {
         endRound();
     }
 }
+
 
 // Таймер
 function startTimer() {
